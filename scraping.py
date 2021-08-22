@@ -21,7 +21,7 @@ def scrape_all():
         "featured_image": featured_image(browser),
         "facts": mars_facts(),
         "last_modified": dt.datetime.now(),
-        "hemispheres": hemisphere_data(browser)
+        "hemisphere_images": hemisphere_data(browser)
     }
     
     # Stop webdriver and return data
@@ -118,7 +118,7 @@ def hemisphere_data(browser):
     hemisphere_image_urls = []
     img_url_4 = img_ctr.find('div', class_='collapsible results')
     img_links = img_url_4.find_all('div', class_='item')
-    for i in img_links:
+    for i in img_links(4):
         i.a['href']
         #print(url + i.a['href'])
 
